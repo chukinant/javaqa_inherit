@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 public class TasksTest {
 
     @Test
-    public void shouldMatchSimpleTask () {
+    public void shouldMatchSimpleTask() {
         SimpleTask task = new SimpleTask(11, "Заказать консультацию");
 
         boolean actual = task.matches("Заказать");
@@ -15,7 +15,7 @@ public class TasksTest {
     }
 
     @Test
-    public void shouldNotMatchSimpleTask () {
+    public void shouldNotMatchSimpleTask() {
         SimpleTask task = new SimpleTask(11, "Заказать консультацию");
 
         boolean actual = task.matches("была");
@@ -24,7 +24,7 @@ public class TasksTest {
     }
 
     @Test
-    public void shouldMatchEpic () {
+    public void shouldMatchEpic() {
         Epic task = new Epic(11, new String[]{"Написать тесты", "Вопросы к совещанию", "Начать регрессионное тестирование"});
 
         boolean actual = task.matches("Написать тесты");
@@ -33,7 +33,7 @@ public class TasksTest {
     }
 
     @Test
-    public void shouldNotMatchEpic () {
+    public void shouldNotMatchEpic() {
         Epic task = new Epic(11, new String[]{"Написать тесты", "Вопросы к совещанию", "Начать регрессионное тестирование"});
 
         boolean actual = task.matches("Почистить обувь");
@@ -42,7 +42,7 @@ public class TasksTest {
     }
 
     @Test
-    public void shouldMatchMeetingTopic () {
+    public void shouldMatchMeetingTopic() {
         Meeting task = new Meeting(11, "Sprint planning", "javaqa", "2024-12-24");
 
         boolean actual = task.matches("Sprint planning");
@@ -51,7 +51,7 @@ public class TasksTest {
     }
 
     @Test
-    public void shouldMatchMeetingProject () {
+    public void shouldMatchMeetingProject() {
         Meeting task = new Meeting(11, "Sprint planning", "javaqa", "2024-12-24");
 
         boolean actual = task.matches("javaqa");
@@ -60,7 +60,7 @@ public class TasksTest {
     }
 
     @Test
-    public void shouldNotMatchMeetingStart () {
+    public void shouldNotMatchMeetingStart() {
         Meeting task = new Meeting(11, "Sprint planning", "javaqa", "2024-12-24");
 
         boolean actual = task.matches("2024-12-24");
